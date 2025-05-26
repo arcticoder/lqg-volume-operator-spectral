@@ -1,0 +1,29 @@
+Regulated Inverse Volume Operator Analysis
+=======================================
+
+V² Matrix:
+Matrix([[hyper((0, 0, 1/2, 1, 1), (2, 2, 2, 2), 1)/4, hyper((0, 0, 1/2), (2, 2), 1)/12], [hyper((-1, -1, 1/2), (1, 1), 1)/12, hyper((-1, -1, 1/2, 2, 2), (1, 1, 1, 1), 1)/36]])
+
+Eigenvalues of V²:
+lambda = 1/6 - sqrt(10)/24 (multiplicity: 1)
+lambda = sqrt(10)/24 + 1/6 (multiplicity: 1)
+
+Boundedness Analysis:
+1/lambda = 4*sqrt(10) + 16
+1/lambda = 16 - 4*sqrt(10)
+Conclusion: The operator is bounded (all 1/lambda_k are finite).
+
+Self-adjointness Analysis:
+Conclusion: The operator is self-adjoint (V_inv = V_inv†).
+
+Regulated Inverse Operator V_inv^(epsilon):
+Matrix([[256/41, -336/41], [-336/41, 1056/41]])
+
+LaTeX form of V_inv^(epsilon):
+\left[\begin{matrix}\frac{256}{41} & - \frac{336}{41}\\- \frac{336}{41} & \frac{1056}{41}\end{matrix}\right]
+
+Spectral form of V_inv^(epsilon):
+V_inv^(epsilon) = \frac{1}{\frac{1}{6} - \frac{\sqrt{10}}{24}}P_{\lambda_{\frac{1}{6} - \frac{\sqrt{10}}{24}}} + \frac{1}{\frac{\sqrt{10}}{24} + \frac{1}{6}}P_{\lambda_{\frac{\sqrt{10}}{24} + \frac{1}{6}}}
+
+Simplified spectral form of V_inv^(epsilon):
+V_inv^(epsilon) = \frac{1}{\frac{1}{6} - \frac{\sqrt{10}}{24}}P_{1} + \frac{1}{\frac{\sqrt{10}}{24} + \frac{1}{6}}P_{2}
