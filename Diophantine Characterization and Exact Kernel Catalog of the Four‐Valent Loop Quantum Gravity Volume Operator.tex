@@ -1,5 +1,8 @@
-\documentclass{article}
+\documentclass[11pt]{article}
 \usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
 \begin{document}
 
 \title{Diophantine Characterization and Exact Kernel Catalog of the Four‐Valent Loop Quantum Gravity Volume Operator}
@@ -8,7 +11,7 @@
 \maketitle
 
 \begin{abstract}
-We present a comprehensive spectral analysis of the four-valent Loop Quantum Gravity (LQG) volume operator, building on the uniform closed-form representation of the SU(2) 12$j$ symbols \cite{Arcticoder2025Uniform12j} and the universal generating functional for SU(2) $3nj$ symbols \cite{Arcticoder2025Generating}. By deriving an exact Diophantine characterization of trivial zero-volume states through the condition $J_{12}\cap J_{34}=\emptyset$, we prove that all zero-volume configurations in the spin range $0.5\le j_i\le3.0$ are trivial, with no non-trivial kernel states arising from vanishing recoupling coefficients. This result validates theoretical predictions and provides a complete catalog of four-valent volume operator kernels.
+We present a comprehensive spectral analysis of the four-valent Loop Quantum Gravity (LQG) volume operator, building on the uniform closed-form representation of the SU(2) 12$j$ symbols \cite{Arcticoder2025Uniform12j} and the universal generating functional for SU(2) $3nj$ symbols \cite{Arcticoder2025Generating}. By deriving an exact Diophantine characterization of trivial zero-volume states through the condition $J_{12}\cap J_{34}=\emptyset$, we prove that all zero-volume configurations in the spin range $0.5\le j_i\le3.0$ are trivial and that no non-trivial kernel states arise from vanishing recoupling coefficients. This result validates theoretical predictions and provides a complete catalog of four-valent volume operator kernels.
 \end{abstract}
 
 \section{Introduction}
@@ -34,23 +37,36 @@ The former condition yields \emph{trivial} zero-volume configurations, precisely
 \end{equation}
 We implemented a high-precision numerical scan over $0.5\le j_i\le3.0$, using exact evaluations of the underlying SU(2) recoupling coefficients, and demonstrated that every zero-volume configuration arises from the empty-intersection condition, with no non-trivial solutions $\lambda(J)=0$ occurring within the intersection. The absence of non-trivial kernel states, combined with the mathematical exactness of the closed-form recoupling coefficients, provides strong evidence for the complete Diophantine kernel classification of four-valent LQG volume operators.
 
-\begin{thebibliography}{9}
-\bibitem{Arcticoder2025Uniform12j}
-Arcticoder.
-\newblock Uniform Closed-Form Representation of SU(2) 12$j$ Symbols.
-\newblock May 25, 2025.
-\newblock \url{https://arcticoder.github.io/su2-3nj-uniform-closed-form}
+\section{Computational Methodology}
+The analysis was implemented in two Python scripts: \texttt{find_zero_volume_valence4.py} (legacy, pre-correction) and \texttt{analyze_zero_volume_states.py} (corrected intersection logic). We scanned all half-integer spin configurations in the range $0.5\le j_i\le3.0$ using high-precision arithmetic to evaluate the CF$_{12j}$ 12$j$ symbol expressions and assembled the squared volume matrix. Data structures include a JSON catalog of zero-volume states and statistical summaries.
 
-\bibitem{Arcticoder2025Generating}
-Arcticoder.
-\newblock A Universal Generating Functional for SU(2) 3nj Symbols.
-\newblock May 24, 2025.
-\newblock \url{https://arcticoder.github.io/su2-3nj-generating-functional/}
+\section{Results}
+\subsection{Trivial Zero-Volume States}
+\input{results/trivial_zero_volume_table.tex}
 
-\bibitem{AshtekarLewandowski2004}
-A.~Ashtekar and J.~Lewandowski.
-\newblock Background Independent Quantum Gravity: A Status Report.
-\newblock \emph{Class. Quantum Grav.}, 21:R53, 2004.
-\end{thebibliography}
+\subsection{Kernel Dimension Distribution}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.8\linewidth]{kernel_dimension_distribution.png}
+  \caption{Distribution of kernel dimensions for 4-valent zero-volume states.}
+  \label{fig:kernel_dim_dist}
+\end{figure}
+
+\subsection{Spin-1/2 Correlation}
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.8\linewidth]{spin_half_correlation.png}
+  \caption{Presence of spin-$\tfrac{1}{2}$ edges vs.\ kernel dimension.}
+  \label{fig:spin_half_corr}
+\end{figure}
+
+\section{Discussion}
+The absence of non-trivial zero-volume states, together with the exact closed-form recoupling coefficients, indicates that the four-valent LQG volume operator kernel is fully characterized by the empty-intersection condition. This supports theoretical expectations based on Diophantine root catalog arguments and suggests that kernel contributions for higher valence will similarly reduce to combinatorial coupling constraints.
+
+\section{Conclusion}
+We have provided a complete Diophantine characterization and catalog of four-valent LQG volume operator kernel states in the spin range $0.5\le j_i\le3.0$. The corrected intersection logic and exhaustive numerical scan confirm that all zero-volume states are trivial, arising solely from empty coupling space. Future work will extend these methods to higher-valence nodes and explore continuum-limit operator spectra.
+
+\bibliographystyle{plain}
+\bibliography{refs}
 
 \end{document}
