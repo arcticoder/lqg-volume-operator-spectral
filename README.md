@@ -2,6 +2,8 @@
 
 This repository contains scripts and tools for computing and analyzing the spectrum of the Loop Quantum Gravity (LQG) volume operator and its kernel (zero-volume) states.
 
+**📖 [View the complete research documentation on GitHub Pages](https://arcticoder.github.io/lqg-volume-kernel-catalog/)**
+
 ## Repository Name
 
 **lqg-volume-kernel-catalog**
