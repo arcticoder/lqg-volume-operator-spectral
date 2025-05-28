@@ -1,0 +1,30 @@
+title: "LQG Volume Operator Spectral Analysis"
+description: "Diophantine Characterization and Exact Kernel Catalog of the Four-Valent Loop Quantum Gravity Volume Operator"
+author: "Arcticoder"
+baseurl: "/lqg-volume-kernel-catalog"
+url: "https://arcticoder.github.io"
+
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
