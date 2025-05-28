@@ -10,13 +10,13 @@ title: "Diophantine Characterization and Exact Kernel Catalog of the Four-Valent
 # Diophantine Characterization and Exact Kernel Catalog of the Four-Valent Loop Quantum Gravity Volume Operator
 
 **Author:** Arcticoder  
-**Date:** May 26, 2025
+**Date:** May 27, 2025
 
 ---
 
 ## Abstract
 
-We present a comprehensive spectral analysis of the four-valent Loop Quantum Gravity (LQG) volume operator, building on the uniform closed-form representation of the SU(2) 12j symbols and the universal generating functional for SU(2) 3nj symbols. By deriving an exact Diophantine characterization of trivial zero-volume states through the condition $$J_{12}\cap J_{34}=\emptyset$$, we prove that all zero-volume configurations in the spin range $$0.5\le j_i\le3.0$$ are trivial, with no non-trivial kernel states arising from vanishing recoupling coefficients. This result validates theoretical predictions and provides a complete catalog of four-valent volume operator kernels.
+We present a comprehensive spectral analysis of the four-valent Loop Quantum Gravity (LQG) volume operator, building on the uniform closed-form representation of the SU(2) 12j symbols and the universal generating functional for SU(2) 3nj symbols. By deriving an exact Diophantine characterization of trivial zero-volume states through the condition $$J_{12}\cap J_{34}=\emptyset$$, we prove that all zero-volume configurations in the spin range $$0.5\le j_i\le3.0$$ are trivial and that no non-trivial kernel states arise from vanishing recoupling coefficients. This result validates theoretical predictions and provides a complete catalog of four-valent volume operator kernels.
 
 ---
 
@@ -50,6 +50,12 @@ We implemented a high-precision numerical scan over $$0.5\le j_i\le3.0$$, using 
 
 ---
 
+## Computational Methodology
+
+The analysis was implemented in two Python scripts: `find_zero_volume_valence4.py` (legacy, pre-correction) and `analyze_zero_volume_states.py` (corrected intersection logic). We scanned all half-integer spin configurations in the range $$0.5\le j_i\le3.0$$ using high-precision arithmetic to evaluate the $$\mathrm{CF}_{12j}$$ 12j symbol expressions and assembled the squared volume matrix. Data structures include a JSON catalog of zero-volume states and statistical summaries.
+
+---
+
 ## Computational Results
 
 ### Zero-Volume State Analysis
@@ -69,6 +75,8 @@ This confirms that all zero-volume states in the scanned range are trivial, aris
 2. **Absence of Non-Trivial States:** No configurations were found where $$J_{12}\cap J_{34}\neq\emptyset$$ yet $$\lambda(J)=0$$ for all $$J$$ in the intersection.
 
 3. **Theoretical Validation:** The computational results validate the theoretical framework based on closed-form SU(2) recoupling coefficients.
+
+4. **Corrected Intersection Logic:** The analysis uses the proper intersection $$J_{12}\cap J_{34}$$ for the 4-valent intertwiner space basis, correcting previous approaches that used only $$J_{12}$$.
 
 ---
 
@@ -159,21 +167,29 @@ This research builds on recent advances in SU(2) recoupling theory:
 
 ---
 
+## Discussion
+
+The absence of non-trivial zero-volume states, together with the exact closed-form recoupling coefficients, indicates that the four-valent LQG volume operator kernel is fully characterized by the empty-intersection condition. This supports theoretical expectations based on Diophantine root catalog arguments and suggests that kernel contributions for higher valence will similarly reduce to combinatorial coupling constraints.
+
+---
+
 ## Conclusion
 
 We have established a complete Diophantine characterization of the four-valent LQG volume operator kernel, proving that all zero-volume states in the range $$0.5\le j_i\le3.0$$ are trivial. This result, validated through high-precision computational analysis, provides the first exact catalog of volume operator kernels and demonstrates the power of closed-form SU(2) recoupling theory in quantum gravity applications.
 
-The absence of non-trivial kernel states has important implications for the geometric interpretation of LQG spin networks and the discrete structure of quantum spacetime at four-valent nodes.
+The corrected intersection logic and exhaustive numerical scan confirm that all zero-volume states are trivial, arising solely from empty coupling space. The absence of non-trivial kernel states has important implications for the geometric interpretation of LQG spin networks and the discrete structure of quantum spacetime at four-valent nodes.
+
+Future work will extend these methods to higher-valence nodes and explore continuum-limit operator spectra.
 
 ---
 
 ## References
 
-1. **Arcticoder.** *Uniform Closed-Form Representation of SU(2) 12j Symbols.* May 25, 2025. [https://arcticoder.github.io/su2-3nj-uniform-closed-form](https://arcticoder.github.io/su2-3nj-uniform-closed-form)
+1. **Arcticoder.** *Uniform closed-form representation of SU(2) 12j symbols.* arXiv preprint, 2025. In preparation.
 
-2. **Arcticoder.** *A Universal Generating Functional for SU(2) 3nj Symbols.* May 24, 2025. [https://arcticoder.github.io/su2-3nj-generating-functional/](https://arcticoder.github.io/su2-3nj-generating-functional/)
+2. **Arcticoder.** *Universal generating functional for SU(2) 3nj symbols.* arXiv preprint, 2025. In preparation.
 
-3. **A. Ashtekar and J. Lewandowski.** *Background Independent Quantum Gravity: A Status Report.* Class. Quantum Grav., 21:R53, 2004.
+3. **A. Ashtekar and J. Lewandowski.** *Background independent quantum gravity: a status report.* Classical and Quantum Gravity, 21(15):R53, 2004.
 
 ---
 
@@ -181,4 +197,4 @@ The absence of non-trivial kernel states has important implications for the geom
 
 ---
 
-*This page is automatically generated from the research repository. For the complete computational framework and source code, visit the [GitHub repository](https://github.com/arcticoder/lqg-volume-kernel-catalog).*
+*This page reflects the latest research results and computational analysis. The complete PDF manuscript, properly compiled bibliography, and source code are available in the [GitHub repository](https://github.com/arcticoder/lqg-volume-kernel-catalog). Last updated: May 27, 2025.*
