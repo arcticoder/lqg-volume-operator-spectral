@@ -1,7 +1,7 @@
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
-\graphicspath{{figures/}}
+\graphicspath{{results/figures/}}
 
 \begin{document}
 
@@ -38,7 +38,7 @@ The former condition yields \emph{trivial} zero-volume configurations, precisely
 We implemented a high-precision numerical scan over $0.5\le j_i\le3.0$, using exact evaluations of the underlying SU(2) recoupling coefficients, and demonstrated that every zero-volume configuration arises from the empty-intersection condition, with no non-trivial solutions $\lambda(J)=0$ occurring within the intersection. The absence of non-trivial kernel states, combined with the mathematical exactness of the closed-form recoupling coefficients, provides strong evidence for the complete Diophantine kernel classification of four-valent LQG volume operators.
 
 \section{Computational Methodology}
-The analysis was implemented in two Python scripts: \texttt{find_zero_volume_valence4.py} (legacy, pre-correction) and \texttt{analyze_zero_volume_states.py} (corrected intersection logic). We scanned all half-integer spin configurations in the range $0.5\le j_i\le3.0$ using high-precision arithmetic to evaluate the CF$_{12j}$ 12$j$ symbol expressions and assembled the squared volume matrix. Data structures include a JSON catalog of zero-volume states and statistical summaries.
+The analysis was implemented in two Python scripts: \texttt{find\_zero\_volume\_valence4.py} (legacy, pre-correction) and \texttt{analyze\_zero\_volume\_states.py} (corrected intersection logic). We scanned all half-integer spin configurations in the range $0.5\le j_i\le3.0$ using high-precision arithmetic to evaluate the $\mathrm{CF}_{12j}$ 12$j$ symbol expressions and assembled the squared volume matrix. Data structures include a JSON catalog of zero-volume states and statistical summaries.
 
 \section{Results}
 \subsection{Trivial Zero-Volume States}
