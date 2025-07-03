@@ -1,0 +1,25 @@
+{
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "ms-vscode.cpptools",
+      "james-yu.latex-workshop"
+    ]
+  },
+  "settings": {
+    "files.exclude": {
+      "**/__pycache__": true,
+      "**/venv": true,
+      "**/.pytest_cache": true,
+      "**/.venv": true,
+      "**/.git": true,
+      "**/node_modules": true
+    }
+  },
+  "folders": [
+    {
+      "name": "lqg-volume-kernel-catalog",
+      "path": "."
+    }
+  ]
+}
